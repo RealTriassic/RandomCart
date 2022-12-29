@@ -1,6 +1,8 @@
 # RandomCart
 Add a surprise element to mining on your Minecraft server by giving blocks a chance to spawn a "RandomCart" with items in it.
 
+Available on [SpigotMC](https://www.spigotmc.org/resources/randomcart.107038/) and [Modrinth](https://modrinth.com/plugin/randomcart)!
+
 ## How to use?
 1. Download the [latest release](https://github.com/RealTriassic/RandomCart/releases/latest) of the plugin.
 2. Put the `.jar` file into your `plugins` directory.
