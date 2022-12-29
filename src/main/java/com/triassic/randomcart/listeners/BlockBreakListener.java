@@ -49,14 +49,20 @@ public class BlockBreakListener implements Listener {
             return;
         }
 
+        RandomCart.Minecart minecartData = RandomCart.loadMinecart(config, random);
+
+        if (minecartData == null) {
+            return;
+        }
+
+        String selectedMinecart = minecartData.getSelectedMinecart();
+
         Location blockLocation = block.getLocation();
         blockLocation.setY(blockLocation.getY() + 0.75);
 
         StorageMinecart chestMinecart = (StorageMinecart) block.getWorld().spawnEntity(blockLocation, EntityType.MINECART_CHEST);
         Inventory chestInventory = chestMinecart.getInventory();
 
-        RandomCart.Minecart minecartData = RandomCart.loadMinecart(config, random);
-        String selectedMinecart = minecartData.getSelectedMinecart();
         String chestName = ChatColor.translateAlternateColorCodes('&', minecartData.getName());
         chestMinecart.setCustomName(chestName);
 

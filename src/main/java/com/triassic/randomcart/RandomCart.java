@@ -49,15 +49,24 @@ public final class RandomCart extends JavaPlugin implements Listener {
     }
 
     public static Minecart loadMinecart(Configuration config, Random random) {
-        List<String> minecartKeys = new ArrayList<>(config.getConfigurationSection("minecarts").getKeys(false));
-        String selectedMinecart = minecartKeys.get(random.nextInt(minecartKeys.size()));
+        List<String> minecartKeys = null;
 
-        String name = config.getString("minecarts." + selectedMinecart + ".name");
+        try {
+            minecartKeys = new ArrayList<>(config.getConfigurationSection("minecarts").getKeys(false));
+        } catch (NullPointerException ignored) {}
 
-        ConfigurationSection itemsConfig = config.getConfigurationSection("minecarts." + selectedMinecart + ".items");
-        List<String> items = new ArrayList<>(itemsConfig.getKeys(false));
+        if (minecartKeys != null) {
+            String selectedMinecart = minecartKeys.get(random.nextInt(minecartKeys.size()));
 
-        return new Minecart(name, items, selectedMinecart);
+            String name = config.getString("minecarts." + selectedMinecart + ".name");
+
+            ConfigurationSection itemsConfig = config.getConfigurationSection("minecarts." + selectedMinecart + ".items");
+            List<String> items = new ArrayList<>(itemsConfig.getKeys(false));
+
+            return new Minecart(name, items, selectedMinecart);
+        }
+
+        return null;
     }
 
     public static List<Material> loadAllowedBlocks(Configuration config, Logger logger) {

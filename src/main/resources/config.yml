@@ -15,57 +15,33 @@
 # Plugin created by Triassic.
 
 
+randomcart:
+  chance: 0.5 # The chance that a RandomCart spawns.
+  # Blocks that have the ability to spawn RandomCarts.
+  allowed-blocks: []
+
+minecarts:
+#  miner-cart: # Identifier used internally by the plugin.
+#    name: "&9Miner's Cart" # Displayed in the Minecart's Chest GUI as the title.
+#    # List of items that will be included in this preset.
+#    items:
+#      IRON_PICKAXE: # Item Name.
+#        display-name: "&fMiner's Pickaxe" # The Name of the item displayed to players.
+#        amount: 1 # Amount of the item to add.
+#        # Lore of the Item displayed to players.
+#        lore:
+#          - "&7From the deepest depths of the caves."
+#        # Item Enchantments
+#        enchantments:
+#          EFFICIENCY: # Enchantment Name
+#            level: 4 # Enchantment Level
+#      STONE:
+#        amount: 192
+#      STONE_BRICKS:
+#        amount: 128
+#      COOKED_PORKCHOP:
+#        amount: 16
+#      COBBLESTONE: []
 
 
 version: 1.0.0 # DO NOT MODIFY.
-randomcart:
-  chance: 2 # The chance that a RandomCart spawns.
-  # Blocks that have the ability to spawn RandomCarts.
-  allowed-blocks:
-    - DIRT
-    - STONE
-    - GRASS_BLOCK
-
-minecarts:
-  miner-cart: # Identifier used internally by the plugin.
-    name: "&9Miner's Cart" # Displayed in the Minecart's Chest GUI as the title.
-    # List of items that will be included in this preset.
-    items:
-      IRON_PICKAXE: # Item Name.
-        display-name: "&fMiner's Pickaxe" # The Name of the item displayed to players.
-        amount: 1 # Amount of the item to add.
-        # Lore of the Item displayed to players.
-        lore:
-          - "&7From the deepest depths of the caves."
-        # Item Enchantments
-        enchantments:
-          EFFICIENCY: # Enchantment Name
-            level: 4 # Enchantment Level
-      STONE:
-        amount: 192
-      STONE_BRICKS:
-        amount: 128
-      COOKED_PORKCHOP:
-        amount: 16
-  basic-cart:
-    name: "&6Basic Cart"
-    items:
-      STONE_SWORD: []
-      STONE_PICKAXE: []
-      STONE_AXE: []
-      STONE_SHOVEL: []
-  special-cart:
-    name: "&bSpecial Cart"
-    items:
-      NETHER_STAR:
-        amount: 4
-        lore:
-          - "&7Is this nether star special?"
-          - "&3Maybe?"
-      NETHERITE_INGOT:
-        amount: 6
-      DIAMOND:
-        display-name: "&3Shiny Diamond"
-        lore:
-          - "&bOoo.. shiny!"
-        amount: 24
