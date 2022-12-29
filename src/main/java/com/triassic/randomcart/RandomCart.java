@@ -29,7 +29,7 @@ public final class RandomCart extends JavaPlugin implements Listener {
         private final List<String> items;
         private final String selectedMinecart;
 
-        public Minecart (String name, List<String> items, String selectedMinecart) {
+        public Minecart(String name, List<String> items, String selectedMinecart) {
             this.name = name;
             this.items = items;
             this.selectedMinecart = selectedMinecart;
