@@ -1,0 +1,6 @@
+name: RandomCart
+version: '${project.version}'
+main: com.triassic.randomcart.RandomCart
+api-version: 1.13
+authors: [ Triassic ]
+description: Summons a Minecart randomly with loot inside of it when a block is broken.
