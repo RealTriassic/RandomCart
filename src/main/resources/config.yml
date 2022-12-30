@@ -18,30 +18,40 @@
 randomcart:
   chance: 0.5 # The chance that a RandomCart spawns.
   # Blocks that have the ability to spawn RandomCarts.
-  allowed-blocks: []
+  allowed-blocks:
+    - STONE
+    - DIRT
+    - GRASS_BLOCK
 
 minecarts:
 #  miner-cart: # Identifier used internally by the plugin.
 #    name: "&9Miner's Cart" # Displayed in the Minecart's Chest GUI as the title.
 #    # List of items that will be included in this preset.
 #    items:
-#      IRON_PICKAXE: # Item Name.
+#      0: # Slot the item should be added in. Slots begin from 0.
+#        material: "IRON_PICKAXE" # The Item Name.
 #        display-name: "&fMiner's Pickaxe" # The Name of the item displayed to players.
-#        amount: 1 # Amount of the item to add.
 #        # Lore of the Item displayed to players.
 #        lore:
 #          - "&7From the deepest depths of the caves."
 #        # Item Enchantments
 #        enchantments:
-#          EFFICIENCY: # Enchantment Name
-#            level: 4 # Enchantment Level
-#      STONE:
-#        amount: 192
-#      STONE_BRICKS:
-#        amount: 128
-#      COOKED_PORKCHOP:
+#          EFFICIENCY: # Enchantment Name.
+#            level: 4 # Enchantment Level.
+#      1:
+#        material: "STONE"
+#        display-name: "&dSpecial Stone"
+#        lore:
+#          - "&7I don't know why!"
+#        amount: 64
+#      2:
+#        material: "STONE_BRICKS"
+#        amount: 64
+#      3:
+#        material: "COOKED_PORKCHOP"
 #        amount: 16
-#      COBBLESTONE: []
+#      4:
+#        material: "COBBLESTONE"
 
 
-version: 1.0.1 # DO NOT MODIFY.
+version: 1.0.2 # DO NOT MODIFY.

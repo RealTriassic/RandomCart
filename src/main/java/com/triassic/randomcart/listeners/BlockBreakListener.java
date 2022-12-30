@@ -66,17 +66,19 @@ public class BlockBreakListener implements Listener {
         String chestName = ChatColor.translateAlternateColorCodes('&', minecartData.getName());
         chestMinecart.setCustomName(chestName);
 
-        for (String itemString : minecartData.getItems()) {
-            Material material = Material.getMaterial(itemString);
+        for (String itemSlot : minecartData.getItems()) {
+            String materialName = config.getString("minecarts." + selectedMinecart + ".items." + itemSlot + ".material");
+
+            Material material = Material.getMaterial(materialName);
             if (material == null) {
-                logger.warning("Invalid item name " + itemString + " in " + selectedMinecart);
+                logger.warning("Invalid item name " + materialName + " in " + selectedMinecart);
                 continue;
             }
 
-            String displayName = config.getString("minecarts." + selectedMinecart + ".items." + itemString + ".display-name");
-            int stackSize = config.getInt("minecarts." + selectedMinecart + ".items." + itemString + ".amount");
-            List<String> lore = config.getStringList("minecarts." + selectedMinecart + ".items." + itemString + ".lore");
-            ConfigurationSection enchantmentsSection = config.getConfigurationSection("minecarts." + selectedMinecart + ".items." + itemString + ".enchantments");
+            String displayName = config.getString("minecarts." + selectedMinecart + ".items." + itemSlot + ".display-name");
+            int stackSize = config.getInt("minecarts." + selectedMinecart + ".items." + itemSlot + ".amount");
+            List<String> lore = config.getStringList("minecarts." + selectedMinecart + ".items." + itemSlot + ".lore");
+            ConfigurationSection enchantmentsSection = config.getConfigurationSection("minecarts." + selectedMinecart + ".items." + itemSlot + ".enchantments");
 
             if (stackSize == 0) {
                 stackSize = 1;
@@ -111,7 +113,7 @@ public class BlockBreakListener implements Listener {
             }
 
             item.setItemMeta(meta);
-            chestInventory.addItem(item);
+            chestInventory.setItem(Integer.parseInt(itemSlot), item);
         }
     }
 }
