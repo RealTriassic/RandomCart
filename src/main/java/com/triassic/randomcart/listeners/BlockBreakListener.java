@@ -41,7 +41,7 @@ public class BlockBreakListener implements Listener {
     @EventHandler
     public void onBlockBreak(BlockBreakEvent event) {
         Block block = event.getBlock();
-        if (!allowedBlocks.contains(block.getType())) {
+        if (!allowedBlocks.contains(block.getType()) || event.isCancelled()) {
             return;
         }
 
