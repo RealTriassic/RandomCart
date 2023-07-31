@@ -53,5 +53,9 @@ minecarts:
 #      4:
 #        material: "COBBLESTONE"
 
+# Toggle whether your server stats are sent to https://bstats.org.
+# All data collected is fully anonymous and by setting this option to false you can opt-out.
+toggle-metrics: true
+
 
 version: ${project.version} # DO NOT MODIFY.

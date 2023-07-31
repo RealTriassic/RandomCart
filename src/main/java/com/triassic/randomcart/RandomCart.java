@@ -21,6 +21,13 @@ public final class RandomCart extends JavaPlugin implements Listener {
 
         this.saveDefaultConfig();
 
+        // Initialize bStats metrics
+        final boolean metricsEnabled = config.getBoolean("toggle-metrics", true);
+
+        if (metricsEnabled) {
+            new Metrics(this, 19329);
+        }
+
         getServer().getPluginManager().registerEvents(new BlockBreakListener(config, logger, random), this);
     }
 
